@@ -1,17 +1,17 @@
 .blankBlock{
-    height: clamp(50px, 15vw, 100px);
+    height: clamp(72px, 19vw, 100px);
     border-radius: 5%;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: clamp(2.5px, 0.75vw, 5px);
+    margin: clamp(3.5px, 0.9vw, 5px);
     padding: 0;
     background-color: grey;
     font-weight: 500;
 }
 .block{
-    height: clamp(50px, 15vw, 100px);
+    height: clamp(70px, 18vw, 100px);
     border: 1px solid rgb(207, 207, 207);
     border-radius: 5%;
     aspect-ratio: 1/1;

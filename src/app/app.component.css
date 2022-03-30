@@ -2,15 +2,41 @@
 .hole-page{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
     justify-content: center;
     align-items: center;
 }
+
+.header{
+    min-height: 25vh;
+    width: 98vw;
+    display: grid;
+    grid-template-columns: 15vw 50vw 33vw;
+    grid-template-areas: 'name points rules';
+}
+
+.gameName{
+    grid-area: name;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    padding: 10px 10px 10px 10px;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3em;
+    background-color: rgb(167,76,126);
+    border: 2px solid rgba(255, 228, 196, 0.616);
+}
 .points{
+    grid-area: points;
     display: flex;
     flex-direction: row;
-    height: 15vh;
-    justify-content: center;
+    height: 25vh;
+    justify-content: center ;
     align-items: center;
 }
 .pointsTable{
@@ -33,10 +59,21 @@ span{
     
 }
 
+.rules{
+    grid-area: rules;
+    border: 2px solid rgba(255, 228, 196, 0.616);
+    font-size: 0.8em;
+    max-width: 350px;
+    min-width: 200px;
+    padding: 0px 5px 5px 5px;
+    margin-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .gameTable{
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 70vh;
     justify-content: center;
     align-items: center;
 }
@@ -46,4 +83,23 @@ span{
     margin: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+    .header{
+        display: grid;
+        grid-template-columns: 30vw 70vw;
+        grid-template-rows: max-content max-content;
+        grid-template-areas: 'name rules' 'points points';
+    }
+    .gameName{
+        grid-area: name;
+    }
+    .points{
+        grid-area: points;
+    }
+    .rules{
+        grid-area: rules;
+    }
+    
 }
