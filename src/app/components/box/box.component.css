@@ -1,0 +1,19 @@
+.hole-page{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.rows{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.columns{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.box{
+    background-color: rgba(255, 228, 196, 0.616);
+}

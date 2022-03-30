@@ -1,0 +1,12 @@
+<div class="hole-page">
+    <div class="box">
+      <div class="rows" *ngFor="let r of blocks">
+        <div class="columns" *ngFor="let c of r">
+          <app-block
+          [blockStyles]="c.blockStyle"
+          [animation]="c.quantity + c.direction"
+          ></app-block>
+        </div>
+      </div>
+    </div>
+  </div>

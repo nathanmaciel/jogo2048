@@ -1,0 +1,114 @@
+.blankBlock{
+    height: clamp(50px, 15vw, 100px);
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: clamp(2.5px, 0.75vw, 5px);
+    padding: 0;
+    background-color: grey;
+    font-weight: 500;
+}
+.block{
+    height: clamp(50px, 15vw, 100px);
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    background-color: rgba(182, 160, 160);
+    
+}
+.normal{
+    font-size: clamp(2em, 8vw, 4em);
+    font-weight: 500;
+}
+.medium{
+    font-size: clamp(1.5em, 6vw, 3em);
+    font-weight: 550;
+}
+.large{
+    font-size: clamp(1.2em, 4.8vw, 2.4em);
+    font-weight: 600;
+}
+
+.moveUp{
+    animation: moveUp 350ms 1;
+}
+
+.n3{
+    --mult: 3;
+}
+.n2{
+    --mult: 2
+}
+.n1{
+    --mult: 1
+}
+
+@keyframes moveUp{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(calc(-110% * var(--mult)));
+    }
+}
+
+.moveDown{
+    animation: moveDown 350ms 1;
+}
+
+@keyframes moveDown{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(calc(110% * var(--mult)));
+    }
+}
+
+.moveRight{
+    animation: moveRight 350ms 1;
+}
+
+
+@keyframes moveRight{
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(calc(110% * var(--mult)));
+    }
+}
+
+.moveLeft{
+    animation: moveLeft 350ms 1;
+}
+
+@keyframes moveLeft{
+    0%{
+        transform: translate(0);
+        
+    }
+    100%{
+        transform: translate(calc(-110% * var(--mult)));
+    }
+}
+
+.scale{
+    animation: scale 1s 1;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1.25);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+}
