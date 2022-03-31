@@ -129,6 +129,8 @@ export class AppComponent implements AfterViewInit{
     }
     this.totalPoints = 0;
     this.putRandom()
+    localStorage.setItem('lastgame', JSON.stringify(this.curB))
+    localStorage.setItem('points', JSON.stringify(this.totalPoints))
   }
 
   putRandom(){
