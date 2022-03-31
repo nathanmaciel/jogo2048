@@ -6,13 +6,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: clamp(3.5px, 0.9vw, 5px);
+    margin: clamp(2.5px, 0.8vw, 5px);
     padding: 0;
     background-color: grey;
     font-weight: 500;
 }
 .block{
-    height: clamp(50px, 15.8vw, 100px);
+    height: clamp(50px, 16vw, 100px);
     border-radius: 5%;
     aspect-ratio: 1/1;
     display: flex;

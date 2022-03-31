@@ -248,7 +248,12 @@ export class AppComponent implements AfterViewInit{
             // adding a random block if any changes where made 
             if(this.anyChangesInArray(auxArray, this.curB)){
               this.putRandom()
-            }
+            } else if(!this.anySpaceLeft() && !this.anyChangesInArray(auxArray, this.curB)){
+              this.snackBar.openFromComponent(GameOverComponent,{
+                horizontalPosition: 'center',
+                verticalPosition: 'top',
+                duration: 10000
+            })}
     }, 500)
     //testing to make sure there are moves left to be done in the game, otherwise, game over!
     let timeOut3 = setTimeout(() => {
@@ -258,7 +263,7 @@ export class AppComponent implements AfterViewInit{
           verticalPosition: 'top',
           duration: 10000
         })
-      }
+      } 
       localStorage.setItem('lastgame', JSON.stringify(this.curB))
       localStorage.setItem('points', JSON.stringify(this.totalPoints))
       if(this.totalPoints > this.yourRecord){
