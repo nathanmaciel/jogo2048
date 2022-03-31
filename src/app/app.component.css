@@ -80,7 +80,7 @@ span{
     z-index: 2;
 }
 .mask{
-    height: clamp(500px, 85vh, 800px);
+    height: clamp(400px, 60vh, 800px);
     width: 100%;
     position: absolute;
     z-index: 1;
