@@ -2,6 +2,7 @@ import { AfterViewChecked, AfterViewInit, Component, EventEmitter, HostListener,
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { GameOverComponent } from './components/game-over/game-over.component';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,16 @@ import { DialogComponent } from './components/dialog/dialog.component';
 export class AppComponent implements AfterViewInit{
   title = 'jogo2048';
 
-  totalPoints: number = 0
+  totalPointsStr: string | null = localStorage.getItem('points')
+  totalPoints: number = (this.totalPointsStr != null? parseInt(this.totalPointsStr) : 0)
 
   yourRecordStr: string | null = localStorage.getItem('record')
   yourRecord: number = (this.yourRecordStr != null? parseInt(this.yourRecordStr) : 0)
 
   lastGame: string | null = localStorage.getItem('lastgame')
   curB: number[] = (this.lastGame != null? (JSON.parse(this.lastGame)) : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+  // curB: number[] = [2, 1, 5, 8, 5, 3, 5, 7, 10, 2, 1, 6, 7, 3, 8, 1]
 
   calcArray: number[] = []
 
@@ -97,7 +101,7 @@ export class AppComponent implements AfterViewInit{
         // simulte a swipe -> less than 500 ms and more than 60 px
         if (deltaTime < 500) {
             // touch movement lasted less than 500 ms
-            if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40 && this.place.some((el) => el == 'mask')) {
+            if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 50 && this.place.some((el) => el == 'mask')) {
                 // delta x is at least 60 pixels
                 if (deltaX > 0) {
                     this.rightArrow();
@@ -106,7 +110,7 @@ export class AppComponent implements AfterViewInit{
                 }
             }
 
-            if (Math.abs(deltaY) > 60 && Math.abs(deltaX) < 40 && this.place.some((el) => el == 'mask')) {
+            if (Math.abs(deltaY) > 60 && Math.abs(deltaX) < 50 && this.place.some((el) => el == 'mask')) {
                 // delta y is at least 60 pixels
                 if (deltaY > 0) {
                     this.downArrow();
@@ -161,16 +165,16 @@ export class AppComponent implements AfterViewInit{
 
     for(let i = 0; i < 16; i++){
       if(i - 1 >= 0){
-        if (this.curB[i] == this.curB[i - 1]) return true
+        if (this.curB[i] === this.curB[i - 1]) return true
       }
       if(i - 4 >= 0){
-        if (this.curB[i] == this.curB[i - 4]) return true
+        if (this.curB[i] === this.curB[i - 4]) return true
       }
       if(i + 1 < 16){
-        if (this.curB[i] == this.curB[i + 1]) return true
+        if (this.curB[i] === this.curB[i + 1]) return true
       }
       if(i + 4 < 16){
-        if (this.curB[i] == this.curB[i + 4]) return true
+        if (this.curB[i] === this.curB[i + 4]) return true
       }
     }
     return false;
@@ -254,12 +258,14 @@ export class AppComponent implements AfterViewInit{
     //testing to make sure there are moves left to be done in the game, otherwise, game over!
     let timeOut3 = setTimeout(() => {
       if(this.anyMovesLeft() == false){
-        this.snackBar.open('GAME OVER', 'ok',{
+        this.snackBar.openFromComponent(GameOverComponent,{
           horizontalPosition: 'center',
-          verticalPosition: 'top'
+          verticalPosition: 'top',
+          duration: 10000
         })
       }
       localStorage.setItem('lastgame', JSON.stringify(this.curB))
+      localStorage.setItem('points', JSON.stringify(this.totalPoints))
       if(this.totalPoints > this.yourRecord){
         this.yourRecord = this.totalPoints;
         localStorage.setItem('record', JSON.stringify(this.totalPoints));

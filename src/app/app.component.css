@@ -2,15 +2,15 @@
 .hole-page{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
+    min-height: 98vh;
+    width: 98vw;
     justify-content: center;
     align-items: center;
 }
 
 .header{
     min-height: 25vh;
-    width: 100vw;
+    width: 98vw;
     padding: 0;
     margin: 0;
     grid-template-columns: 100vw;
@@ -66,6 +66,7 @@ span{
 .gameTable{
     display: flex;
     flex-direction: column;
+    width: 98vw;
     height: clamp(300px, 50vh, 600px);
     justify-content: center;
     align-items: center;
@@ -76,9 +77,10 @@ span{
     margin: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
+    z-index: 2;
 }
 .mask{
-    height: clamp(300px, 50vh, 600px);
+    height: clamp(500px, 85vh, 800px);
     width: 100%;
     position: absolute;
     z-index: 1;
