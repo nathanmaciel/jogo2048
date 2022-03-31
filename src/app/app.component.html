@@ -4,12 +4,12 @@
         <div class="gameName">
             <h1>2048</h1>
         </div>
-        <div class="points">
-            <div class="pointsTable">
+        <div class="pointsTable">
+            <div class="score">
                 <span> Total Points </span>
                 <span>{{ totalPoints }}</span>
             </div>
-            <div class="pointsTable">
+            <div class="score">
                 <span> Your Record </span>
                 <span>{{ yourRecord }}</span>
             </div>
@@ -27,7 +27,6 @@
         </div>
         <app-box [curB]="curB"
     [quantityes]="quantityes"
-    [popAnimation]="popAnimation"
     ></app-box>
     </div>
 </div>

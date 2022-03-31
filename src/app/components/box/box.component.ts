@@ -9,9 +9,11 @@ import { BlockStyles } from 'src/app/models/block-styles';
 })
 export class BoxComponent implements  DoCheck {
 
+      //this page gets the resulting arrays from game movements and transform them into styling information to be sent to blockComponent
+
   @Input() animation: string = ''
 
-    // styles the blocks
+    // array with block styles, from 0 (empty) to 12 (4096)
     blcSt: BlockStyles[] = [
       {
         backgroundColor: 'grey',
@@ -86,27 +88,12 @@ export class BoxComponent implements  DoCheck {
           // 12   13  14  15
     @Input() curB: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+    //this property can be used in the future for more animations
     @Input() popAnimation: string[] = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ]
+    //this property keeps basic animation information
     @Input() quantityes: string[] = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ]
   
     //gets the blocks representations and applies style
-    blocksOld: BlockStyles[][] = [[this.blcSt[this.curB[0]],
-     this.blcSt[this.curB[1]],
-      this.blcSt[this.curB[2]],
-       this.blcSt[this.curB[3]]],
-       [this.blcSt[this.curB[4]],
-        this.blcSt[this.curB[5]],
-         this.blcSt[this.curB[6]],
-          this.blcSt[this.curB[7]]],
-           [this.blcSt[this.curB[8]],
-            this.blcSt[this.curB[9]],
-             this.blcSt[this.curB[10]],
-              this.blcSt[this.curB[11]]],
-               [this.blcSt[this.curB[12]],
-               this.blcSt[this.curB[13]],
-                this.blcSt[this.curB[14]],
-                 this.blcSt[this.curB[15]]]]
-
     blocks: BlockDetails[][] = [
       [
         {
@@ -197,14 +184,9 @@ export class BoxComponent implements  DoCheck {
       ],
     ]
 
-    scale: number[] = []
-  
+  constructor() {}
 
-  constructor(
-    
-  ) {}
-  
-
+  //applies changes when they happen
   ngDoCheck(): void {
 
     this.blocks = [

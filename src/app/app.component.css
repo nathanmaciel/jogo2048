@@ -25,6 +25,7 @@
     justify-content: center;
     align-items: center;
 }
+/* TITLE : 2048 */
 h1{
     padding: 10px 10px 10px 10px;
     margin: 0;
@@ -33,16 +34,17 @@ h1{
     background-color: rgb(167,76,126);
     border: 2px solid rgba(255, 228, 196, 0.616);
 }
-.points{
+
+.pointsTable{
     grid-area: points;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: clamp(100px, 25vh, 400px);
+    height: clamp(100px, 28vh, 400px);
     justify-content: center ;
     align-items: center;
 }
-.pointsTable{
+.score{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,6 +53,7 @@ h1{
     margin: 10px;
     border: 2px solid rgba(255, 228, 196, 0.616);
 }
+/* handles the boxes with score info */
 span{
     line-height: 120%;
     margin: 0px;
@@ -60,18 +63,7 @@ span{
     text-align: center;
     border: 1px solid rgba(255, 228, 196, 0.616);
     background-color: rgba(255, 228, 196, 0.712);
-    
 }
-
-.gameTable{
-    display: flex;
-    flex-direction: column;
-    width: 98vw;
-    height: clamp(300px, 50vh, 600px);
-    justify-content: center;
-    align-items: center;
-}
-
 .mat-raised-button{
     background-color:rgba(231, 171, 98, 0.712);
     margin: 15px;
@@ -79,6 +71,16 @@ span{
     font-weight: 700;
     z-index: 2;
 }
+
+.gameTable{
+    display: flex;
+    flex-direction: column;
+    width: 98vw;
+    height: clamp(300px, 51vh, 600px);
+    justify-content: center;
+    align-items: center;
+}
+/* this mask exist to cover area where its possible to swipe finger in touch screen devices */
 .mask{
     height: clamp(400px, 60vh, 800px);
     width: 100%;

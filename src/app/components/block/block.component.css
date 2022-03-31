@@ -24,6 +24,7 @@
     background-color: rgba(182, 160, 160);
     
 }
+/* styling letters*/
 .normal{
     font-size: clamp(2em, 8vw, 4em);
     font-weight: 500;
@@ -37,9 +38,7 @@
     font-weight: 600;
 }
 
-.moveUp{
-    animation: moveUp 350ms 1;
-}
+/* handling animation*/
 
 .n3{
     --mult: 3;
@@ -49,6 +48,10 @@
 }
 .n1{
     --mult: 1
+}
+
+.moveUp{
+    animation: moveUp 350ms 1;
 }
 
 @keyframes moveUp{
