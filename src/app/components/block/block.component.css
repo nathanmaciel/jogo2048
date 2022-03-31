@@ -2,6 +2,7 @@
     height: clamp(50px, 16vw, 100px);
     border-radius: 5%;
     aspect-ratio: 1/1;
+    border: 1px solid rgba(207, 207, 207, 0.568);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +12,7 @@
     font-weight: 500;
 }
 .block{
-    height: clamp(48px, 15vw, 100px);
-    border: 1px solid rgb(207, 207, 207);
+    height: clamp(50px, 15vw, 100px);
     border-radius: 5%;
     aspect-ratio: 1/1;
     display: flex;
