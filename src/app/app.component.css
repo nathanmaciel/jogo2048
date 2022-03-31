@@ -12,15 +12,16 @@
     min-height: 25vh;
     width: 98vw;
     padding: 0;
-    margin: 0;
+    margin-bottom: clamp(20px, 10vh, 80px) ;
     grid-template-columns: 100vw;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: 5vh 10vh;
     grid-template-areas: 'name' 'points';
 }
 
 .gameName{
     grid-area: name;
     min-width: 50px;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +41,8 @@ h1{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: clamp(100px, 28vh, 400px);
+    height: clamp(100px, 15vh, 400px);
+    margin-bottom: clamp(20px, 5vh, 80px) ;
     justify-content: center ;
     align-items: center;
 }
