@@ -6,12 +6,14 @@ import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlockComponent } from './components/block/block.component';
 import { BoxComponent } from './components/box/box.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlockComponent,
-    BoxComponent
+    BoxComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

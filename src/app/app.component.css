@@ -10,10 +10,12 @@
 
 .header{
     min-height: 25vh;
-    width: 98vw;
-    display: grid;
-    grid-template-columns: 15vw 50vw 33vw;
-    grid-template-areas: 'name points rules';
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: 100vw;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: 'name' 'points';
 }
 
 .gameName{
@@ -27,7 +29,7 @@ h1{
     padding: 10px 10px 10px 10px;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 3em;
+    font-size: clamp(20px, 3vh, 50px);
     background-color: rgb(167,76,126);
     border: 2px solid rgba(255, 228, 196, 0.616);
 }
@@ -35,7 +37,8 @@ h1{
     grid-area: points;
     display: flex;
     flex-direction: row;
-    height: 25vh;
+    flex-wrap: wrap;
+    height: clamp(100px, 25vh, 400px);
     justify-content: center ;
     align-items: center;
 }
@@ -44,6 +47,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: clamp(50px, 5vw, 100px);
     margin: 10px;
     border: 2px solid rgba(255, 228, 196, 0.616);
 }
@@ -51,7 +55,7 @@ span{
     line-height: 120%;
     margin: 0px;
     width: 100%;
-    font-size: 1.5em;
+    font-size: clamp(12px, 1.5vh, 30px);
     font-weight: 500;
     text-align: center;
     border: 1px solid rgba(255, 228, 196, 0.616);
@@ -59,21 +63,10 @@ span{
     
 }
 
-.rules{
-    grid-area: rules;
-    border: 2px solid rgba(255, 228, 196, 0.616);
-    font-size: 0.8em;
-    max-width: 350px;
-    min-width: 200px;
-    padding: 0px 5px 5px 5px;
-    margin-top: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 .gameTable{
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: clamp(300px, 50vh, 600px);
     justify-content: center;
     align-items: center;
 }
@@ -83,23 +76,4 @@ span{
     margin: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
-}
-
-@media screen and (max-width: 1000px) {
-    .header{
-        display: grid;
-        grid-template-columns: 30vw 70vw;
-        grid-template-rows: max-content max-content;
-        grid-template-areas: 'name rules' 'points points';
-    }
-    .gameName{
-        grid-area: name;
-    }
-    .points{
-        grid-area: points;
-    }
-    .rules{
-        grid-area: rules;
-    }
-    
 }

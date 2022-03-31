@@ -1,5 +1,7 @@
 import { AfterViewChecked, AfterViewInit, Component, EventEmitter, HostListener, OnChanges, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +27,18 @@ export class AppComponent implements AfterViewInit{
   quantityes: string[] = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '' ]
   quantNum: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-  constructor(private snackBar: MatSnackBar){}
+  defaultTouch = { x: 0, y: 0, time: 0 };
+  place: string[] = []
+
+  constructor(
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
+    ){}
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
+  }
+
 
   ngAfterViewInit(): void {
     if(this.lastGame == null){
@@ -49,6 +62,61 @@ export class AppComponent implements AfterViewInit{
       this.upArrow()
     }
   }
+
+  @HostListener('touchstart', ['$event'])
+  @HostListener('touchend', ['$event'])
+  handleTouch(event: any) {
+
+    console.log(event.type)
+      
+      let touch = event.touches[0] || event.changedTouches[0]
+
+      // console.log(place.includes('touch'))
+
+      // check the events
+      if (event.type === 'touchstart') {
+        this.defaultTouch.x = touch.pageX;
+        this.defaultTouch.y = touch.pageY;
+        this.defaultTouch.time = event.timeStamp;
+
+        for (let i = 0; i < 8; i++){
+          this.place.push(event.path[i].classList.value)
+        }
+        console.log(this.place.some((el) => el == 'block'))
+
+    } else if (event.type === 'touchend') {
+        let deltaX = touch.pageX - this.defaultTouch.x;
+        let deltaY = touch.pageY - this.defaultTouch.y;
+        let deltaTime = event.timeStamp - this.defaultTouch.time;
+        console.log('end')
+        console.log(deltaX)
+        console.log(deltaY)
+        console.log(deltaTime)
+
+        // simulte a swipe -> less than 500 ms and more than 60 px
+        if (deltaTime < 500) {
+            // touch movement lasted less than 500 ms
+            if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40 && this.place.some((el) => el == 'block')) {
+                // delta x is at least 60 pixels
+                if (deltaX > 0) {
+                    this.rightArrow();
+                } else {
+                    this.leftArrow();
+                }
+            }
+
+            if (Math.abs(deltaY) > 60 && Math.abs(deltaX) < 40 && this.place.some((el) => el == 'block')) {
+                // delta y is at least 60 pixels
+                if (deltaY > 0) {
+                    this.downArrow();
+                } else {
+                    this.upArrow();
+                }
+            }
+        }
+        this.place = [''];
+    }
+}
 
   resetGame(){
     for(let i = 0; i < 16; i++){

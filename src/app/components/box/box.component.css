@@ -1,7 +1,6 @@
 .hole-page{
     display: flex;
     flex-direction: column;
-    min-height: 80vh;
     justify-content: center;
     align-items: center;
 }
