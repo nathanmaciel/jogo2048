@@ -8,5 +8,5 @@ My code has a lot of comments. They can help you to understand my thinking while
 Below, a demonstration of how it works. You can access it at https://jogo2048-nathanlmsilva-gmailcom.vercel.app/ .
 
 
-
+<img src="https://raw.githubusercontent.com/nathanmaciel/jogo2048/master/src/ezgif.com-gif-maker%20(2).gif" width="800" height="450" />
 
