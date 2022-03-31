@@ -123,6 +123,7 @@ export class AppComponent implements AfterViewInit{
     for(let i = 0; i < 16; i++){
       this.curB[i]=0
     }
+    this.totalPoints = 0;
     this.putRandom()
   }
 
