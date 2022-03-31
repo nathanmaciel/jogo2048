@@ -77,3 +77,9 @@ span{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
 }
+.mask{
+    height: clamp(300px, 50vh, 600px);
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}

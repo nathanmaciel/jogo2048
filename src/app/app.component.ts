@@ -63,8 +63,9 @@ export class AppComponent implements AfterViewInit{
     }
   }
 
-  @HostListener('touchstart', ['$event'])
-  @HostListener('touchend', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  @HostListener('document:touchend', ['$event'])
+  @HostListener('document:touchcancel', ['$event'])
   handleTouch(event: any) {
 
     console.log(event.type)
@@ -79,10 +80,10 @@ export class AppComponent implements AfterViewInit{
         this.defaultTouch.y = touch.pageY;
         this.defaultTouch.time = event.timeStamp;
 
-        for (let i = 0; i < 8; i++){
+        for (let i = 0; i < 5; i++){
           this.place.push(event.path[i].classList.value)
         }
-        console.log(this.place.some((el) => el == 'block'))
+        console.log(this.place.some((el) => el == 'mask'))
 
     } else if (event.type === 'touchend') {
         let deltaX = touch.pageX - this.defaultTouch.x;
@@ -96,7 +97,7 @@ export class AppComponent implements AfterViewInit{
         // simulte a swipe -> less than 500 ms and more than 60 px
         if (deltaTime < 500) {
             // touch movement lasted less than 500 ms
-            if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40 && this.place.some((el) => el == 'block')) {
+            if (Math.abs(deltaX) > 60 && Math.abs(deltaY) < 40 && this.place.some((el) => el == 'mask')) {
                 // delta x is at least 60 pixels
                 if (deltaX > 0) {
                     this.rightArrow();
@@ -105,7 +106,7 @@ export class AppComponent implements AfterViewInit{
                 }
             }
 
-            if (Math.abs(deltaY) > 60 && Math.abs(deltaX) < 40 && this.place.some((el) => el == 'block')) {
+            if (Math.abs(deltaY) > 60 && Math.abs(deltaX) < 40 && this.place.some((el) => el == 'mask')) {
                 // delta y is at least 60 pixels
                 if (deltaY > 0) {
                     this.downArrow();
