@@ -244,24 +244,26 @@ export class AppComponent implements AfterViewInit{
       this.quantityes.fill('', 0, 16)
       for(let i = 0; i < 16; i++) this.curB[transform2(i)] = calcArray[i]
     }, 350)
+    let gameoverReCheck = true;
     let timeOut2 = setTimeout(() => {
             // adding a random block if any changes where made 
             if(this.anyChangesInArray(auxArray, this.curB)){
               this.putRandom()
             } else if(!this.anySpaceLeft() && !this.anyChangesInArray(auxArray, this.curB)){
+              gameoverReCheck = false;
               this.snackBar.openFromComponent(GameOverComponent,{
                 horizontalPosition: 'center',
                 verticalPosition: 'top',
-                duration: 10000
+                duration: 3000
             })}
     }, 500)
     //testing to make sure there are moves left to be done in the game, otherwise, game over!
     let timeOut3 = setTimeout(() => {
-      if(this.anyMovesLeft() == false){
+      if(this.anyMovesLeft() == false && gameoverReCheck){
         this.snackBar.openFromComponent(GameOverComponent,{
           horizontalPosition: 'center',
           verticalPosition: 'top',
-          duration: 10000
+          duration: 3000
         })
       } 
       localStorage.setItem('lastgame', JSON.stringify(this.curB))
