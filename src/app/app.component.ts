@@ -243,7 +243,7 @@ export class AppComponent implements AfterViewInit{
     let timeOut = setTimeout(() => {
       this.quantityes.fill('', 0, 16)
       for(let i = 0; i < 16; i++) this.curB[transform2(i)] = calcArray[i]
-    }, 350)
+    }, 300)
     let gameoverReCheck = true;
     let timeOut2 = setTimeout(() => {
             // adding a random block if any changes where made 
@@ -256,7 +256,7 @@ export class AppComponent implements AfterViewInit{
                 verticalPosition: 'top',
                 duration: 3000
             })}
-    }, 500)
+    }, 400)
     //testing to make sure there are moves left to be done in the game, otherwise, game over!
     let timeOut3 = setTimeout(() => {
       if(this.anyMovesLeft() == false && gameoverReCheck){
@@ -272,7 +272,7 @@ export class AppComponent implements AfterViewInit{
         this.yourRecord = this.totalPoints;
         localStorage.setItem('record', JSON.stringify(this.totalPoints));
       }
-    },650)
+    },500)
     
   }
 

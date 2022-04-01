@@ -51,7 +51,7 @@
 }
 
 .moveUp{
-    animation: moveUp 350ms 1;
+    animation: moveUp 300ms 1;
 }
 
 @keyframes moveUp{
@@ -64,7 +64,7 @@
 }
 
 .moveDown{
-    animation: moveDown 350ms 1;
+    animation: moveDown 300ms 1;
 }
 
 @keyframes moveDown{
@@ -77,7 +77,7 @@
 }
 
 .moveRight{
-    animation: moveRight 350ms 1;
+    animation: moveRight 300ms 1;
 }
 
 
@@ -91,7 +91,7 @@
 }
 
 .moveLeft{
-    animation: moveLeft 350ms 1;
+    animation: moveLeft 300ms 1;
 }
 
 @keyframes moveLeft{

@@ -98,88 +98,88 @@ export class BoxComponent implements  DoCheck {
       [
         {
           blockStyle:this.blcSt[this.curB[0]],
-          direction: this.popAnimation[0],
-          quantity: this.quantityes[0],
+          animation: this.popAnimation[0],
+          animation2: this.quantityes[0],
         },
         {
           blockStyle:this.blcSt[this.curB[1]],
-          direction: this.popAnimation[1],
-          quantity: this.quantityes[1],
+          animation: this.popAnimation[1],
+          animation2: this.quantityes[1],
         },
         {
           blockStyle:this.blcSt[this.curB[2]],
-          direction: this.popAnimation[2],
-          quantity: this.quantityes[2],
+          animation: this.popAnimation[2],
+          animation2: this.quantityes[2],
         },
         {
           blockStyle:this.blcSt[this.curB[3]],
-          direction: this.popAnimation[3],
-          quantity: this.quantityes[3],
+          animation: this.popAnimation[3],
+          animation2: this.quantityes[3],
         }
       ],
       [
       {
           blockStyle:this.blcSt[this.curB[4]],
-          direction: this.popAnimation[4],
-          quantity: this.quantityes[4],
+          animation: this.popAnimation[4],
+          animation2: this.quantityes[4],
         },
         {
           blockStyle:this.blcSt[this.curB[5]],
-          direction: this.popAnimation[5],
-          quantity: this.quantityes[5],
+          animation: this.popAnimation[5],
+          animation2: this.quantityes[5],
         },
         {
           blockStyle:this.blcSt[this.curB[6]],
-          direction: this.popAnimation[6],
-          quantity: this.quantityes[6],
+          animation: this.popAnimation[6],
+          animation2: this.quantityes[6],
         },
         {
           blockStyle:this.blcSt[this.curB[7]],
-          direction: this.popAnimation[7],
-          quantity: this.quantityes[7],
+          animation: this.popAnimation[7],
+          animation2: this.quantityes[7],
         }
       ],
       [
       {
         blockStyle:this.blcSt[this.curB[8]],
-        direction: this.popAnimation[8],
-        quantity: this.quantityes[8],
+        animation: this.popAnimation[8],
+        animation2: this.quantityes[8],
       },
       {
         blockStyle:this.blcSt[this.curB[9]],
-        direction: this.popAnimation[9],
-        quantity: this.quantityes[9],
+        animation: this.popAnimation[9],
+        animation2: this.quantityes[9],
       },
       {
         blockStyle:this.blcSt[this.curB[10]],
-        direction: this.popAnimation[10],
-        quantity: this.quantityes[10],
+        animation: this.popAnimation[10],
+        animation2: this.quantityes[10],
       },
       {
         blockStyle:this.blcSt[this.curB[11]],
-        direction: this.popAnimation[11],
-        quantity: this.quantityes[11],
+        animation: this.popAnimation[11],
+        animation2: this.quantityes[11],
       }
       ],
       [{
         blockStyle:this.blcSt[this.curB[12]],
-        direction: this.popAnimation[12],
-        quantity: this.quantityes[12],
+        animation: this.popAnimation[12],
+        animation2: this.quantityes[12],
       },
       {
         blockStyle:this.blcSt[this.curB[13]],
-        direction: this.popAnimation[13],
-        quantity: this.quantityes[13],
+        animation: this.popAnimation[13],
+        animation2: this.quantityes[13],
       },
       {
         blockStyle:this.blcSt[this.curB[14]],
-        direction: this.popAnimation[14],
-        quantity: this.quantityes[14],
+        animation: this.popAnimation[14],
+        animation2: this.quantityes[14],
       },
       {
         blockStyle:this.blcSt[this.curB[15]],
-        direction: this.popAnimation[15],
-        quantity: this.quantityes[15],
+        animation: this.popAnimation[15],
+        animation2: this.quantityes[15],
       }
       ],
     ]
@@ -193,88 +193,88 @@ export class BoxComponent implements  DoCheck {
       [
         {
           blockStyle:this.blcSt[this.curB[0]],
-          direction: this.popAnimation[0],
-          quantity: this.quantityes[0],
+          animation: this.popAnimation[0],
+          animation2: this.quantityes[0],
         },
         {
           blockStyle:this.blcSt[this.curB[1]],
-          direction: this.popAnimation[1],
-          quantity: this.quantityes[1],
+          animation: this.popAnimation[1],
+          animation2: this.quantityes[1],
         },
         {
           blockStyle:this.blcSt[this.curB[2]],
-          direction: this.popAnimation[2],
-          quantity: this.quantityes[2],
+          animation: this.popAnimation[2],
+          animation2: this.quantityes[2],
         },
         {
           blockStyle:this.blcSt[this.curB[3]],
-          direction: this.popAnimation[3],
-          quantity: this.quantityes[3],
+          animation: this.popAnimation[3],
+          animation2: this.quantityes[3],
         }
       ],
       [
       {
           blockStyle:this.blcSt[this.curB[4]],
-          direction: this.popAnimation[4],
-          quantity: this.quantityes[4],
+          animation: this.popAnimation[4],
+          animation2: this.quantityes[4],
         },
         {
           blockStyle:this.blcSt[this.curB[5]],
-          direction: this.popAnimation[5],
-          quantity: this.quantityes[5],
+          animation: this.popAnimation[5],
+          animation2: this.quantityes[5],
         },
         {
           blockStyle:this.blcSt[this.curB[6]],
-          direction: this.popAnimation[6],
-          quantity: this.quantityes[6],
+          animation: this.popAnimation[6],
+          animation2: this.quantityes[6],
         },
         {
           blockStyle:this.blcSt[this.curB[7]],
-          direction: this.popAnimation[7],
-          quantity: this.quantityes[7],
+          animation: this.popAnimation[7],
+          animation2: this.quantityes[7],
         }
       ],
       [
       {
         blockStyle:this.blcSt[this.curB[8]],
-        direction: this.popAnimation[8],
-        quantity: this.quantityes[8],
+        animation: this.popAnimation[8],
+        animation2: this.quantityes[8],
       },
       {
         blockStyle:this.blcSt[this.curB[9]],
-        direction: this.popAnimation[9],
-        quantity: this.quantityes[9],
+        animation: this.popAnimation[9],
+        animation2: this.quantityes[9],
       },
       {
         blockStyle:this.blcSt[this.curB[10]],
-        direction: this.popAnimation[10],
-        quantity: this.quantityes[10],
+        animation: this.popAnimation[10],
+        animation2: this.quantityes[10],
       },
       {
         blockStyle:this.blcSt[this.curB[11]],
-        direction: this.popAnimation[11],
-        quantity: this.quantityes[11],
+        animation: this.popAnimation[11],
+        animation2: this.quantityes[11],
       }
       ],
       [{
         blockStyle:this.blcSt[this.curB[12]],
-        direction: this.popAnimation[12],
-        quantity: this.quantityes[12],
+        animation: this.popAnimation[12],
+        animation2: this.quantityes[12],
       },
       {
         blockStyle:this.blcSt[this.curB[13]],
-        direction: this.popAnimation[13],
-        quantity: this.quantityes[13],
+        animation: this.popAnimation[13],
+        animation2: this.quantityes[13],
       },
       {
         blockStyle:this.blcSt[this.curB[14]],
-        direction: this.popAnimation[14],
-        quantity: this.quantityes[14],
+        animation: this.popAnimation[14],
+        animation2: this.quantityes[14],
       },
       {
         blockStyle:this.blcSt[this.curB[15]],
-        direction: this.popAnimation[15],
-        quantity: this.quantityes[15],
+        animation: this.popAnimation[15],
+        animation2: this.quantityes[15],
       }
       ],
     ]
