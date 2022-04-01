@@ -149,8 +149,8 @@ export class AppComponent implements AfterViewInit{
 
   //verifies if there are any empty blocks
   anySpaceLeft(){
-    for(let i of this.curB){
-      if(i == 0) return true
+    for(let i = 0; i < 16; i++){
+      if(this.curB[i] == 0) return true
     }
     return false
   }
@@ -167,16 +167,16 @@ export class AppComponent implements AfterViewInit{
     if(this.anySpaceLeft() == true) return true
     for(let i = 0; i < 16; i++){
       if(i - 1 >= 0){
-        if (this.curB[i] === this.curB[i - 1]) return true
+        if (this.curB[i] == this.curB[i - 1]) return true
       }
       if(i - 4 >= 0){
-        if (this.curB[i] === this.curB[i - 4]) return true
+        if (this.curB[i] == this.curB[i - 4]) return true
       }
       if(i + 1 < 16){
-        if (this.curB[i] === this.curB[i + 1]) return true
+        if (this.curB[i] == this.curB[i + 1]) return true
       }
       if(i + 4 < 16){
-        if (this.curB[i] === this.curB[i + 4]) return true
+        if (this.curB[i] == this.curB[i + 4]) return true
       }
     }
     return false;
@@ -249,7 +249,7 @@ export class AppComponent implements AfterViewInit{
             // adding a random block if any changes where made 
             if(this.anyChangesInArray(auxArray, this.curB)){
               this.putRandom()
-            } else if(!this.anySpaceLeft() && !this.anyChangesInArray(auxArray, this.curB)){
+            } else if(!this.anyChangesInArray(auxArray, this.curB) && !this.anyMovesLeft()){
               gameoverReCheck = false;
               this.snackBar.openFromComponent(GameOverComponent,{
                 horizontalPosition: 'center',
@@ -272,7 +272,7 @@ export class AppComponent implements AfterViewInit{
         this.yourRecord = this.totalPoints;
         localStorage.setItem('record', JSON.stringify(this.totalPoints));
       }
-    },550)
+    },650)
     
   }
 
